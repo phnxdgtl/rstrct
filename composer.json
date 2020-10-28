@@ -1,0 +1,29 @@
+{
+    "name": "phnxdgtl/rstrct",
+    "description": "Rstrict access to a Laravel website via Basic HTTP Authentication",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Gibson",
+            "email": "chris@phoenixdigital.agency"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.2",
+        "laravel/framework": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "Phnxdgtl\\Rstrct\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Phnxdgtl\\Rstrct\\RstrctServiceProvider"
+            ]
+        }
+    }
+}
