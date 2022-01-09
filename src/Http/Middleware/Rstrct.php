@@ -14,8 +14,14 @@ class Rstrct
         
         $user     = env('RSTRCT_USER', false);
         $password = env('RSTRCT_PASSWORD', false);
-        
-        if (!$user || !$password) {
+
+        if (current($request->segments()) == 'ctrl-client') {
+            /**
+             * If we're trying to query the new CTRL Client, allow the request regardless
+             * (We already have token authentication for these requests anyway)
+             **/
+            return $next($request);
+        } else if (!$user || !$password) {
             /**
              * If we don't have a username and password, proceed as normal
              */
